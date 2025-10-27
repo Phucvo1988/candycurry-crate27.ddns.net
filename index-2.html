@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from candycurry-crate.web.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Oct 2025 18:33:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CandyCurry Crate - Sweet & Spicy Fusion Recipes</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff9f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ffa36c, #ffde7d);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            display: block;
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 300;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ffa36c);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        /* Recipe Section */
+        .recipe-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .recipe-section h2 {
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ffde7d;
+            padding-bottom: 10px;
+        }
+        
+        .recipe-intro {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .recipe-image {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recipe-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .ingredients, .instructions {
+            background-color: #fff9f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .ingredients h3, .instructions h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .ingredients ul, .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .ingredients li, .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .recipe-tips {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .recipe-tips h3 {
+            color: #4a9cc9;
+            margin-bottom: 15px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar h3 {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffde7d;
+        }
+        
+        .popular-recipes {
+            margin-bottom: 30px;
+        }
+        
+        .recipe-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .recipe-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        
+        .recipe-item-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .recipe-item-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .newsletter {
+            background: linear-gradient(135deg, #ffde7d, #ffa36c);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        
+        .newsletter h3 {
+            color: white;
+            border-bottom: none;
+        }
+        
+        .newsletter p {
+            margin-bottom: 15px;
+        }
+        
+        .newsletter input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .newsletter button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter button:hover {
+            background-color: #e55c5c;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #333, #555);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffde7d;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: #ffde7d;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #555;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: #ff6b6b;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .recipe-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CandyCurry Crate</h1>
+                <span>Where Sweet Meets Spicy</span>
+            </div>
+            <nav>
+                <ul>
+                     <li><a href="index-2.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="privacy.html" class="nav-link">Privacy Policy </a></li>
+                    <li><a href="terms.html" class="nav-link">Terms Of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover the Magic of Candy & Curry Fusion</h2>
+            <p>Explore unique recipes that blend the sweetness of candy with the bold flavors of curry for an unforgettable culinary experience.</p>
+            <a href="#" class="btn">Explore Recipes</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Recipe Section -->
+            <div class="recipe-section">
+                <h2>Mango Lassi Curry Chicken</h2>
+                
+                <div class="recipe-intro">
+                    <p>This innovative recipe combines the creamy sweetness of mango lassi with the aromatic spices of traditional curry. The result is a dish that surprises the palate with its harmonious blend of flavors. The mango adds a tropical sweetness that perfectly balances the heat from the spices, creating a meal that's both comforting and exciting.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Mango Lassi Curry Chicken" class="recipe-image">
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>2 lbs chicken thighs, boneless and skinless</li>
+                            <li>1 cup plain yogurt</li>
+                            <li>1 ripe mango, peeled and pureed</li>
+                            <li>1 tablespoon ginger-garlic paste</li>
+                            <li>2 tablespoons curry powder</li>
+                            <li>1 teaspoon turmeric</li>
+                            <li>1 teaspoon cumin</li>
+                            <li>1 teaspoon coriander</li>
+                            <li>1/2 teaspoon cinnamon</li>
+                            <li>1/4 teaspoon cardamom</li>
+                            <li>1 onion, finely chopped</li>
+                            <li>2 tomatoes, pureed</li>
+                            <li>1/4 cup heavy cream</li>
+                            <li>2 tablespoons honey</li>
+                            <li>Salt to taste</li>
+                            <li>Fresh cilantro for garnish</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>Instructions</h3>
+                        <ol>
+                            <li>In a large bowl, combine yogurt, mango puree, ginger-garlic paste, and all spices except salt. Mix well to form a marinade.</li>
+                            <li>Add chicken pieces to the marinade, ensuring each piece is well coated. Cover and refrigerate for at least 2 hours, preferably overnight.</li>
+                            <li>Heat oil in a large pan over medium heat. Add chopped onions and sauté until golden brown.</li>
+                            <li>Add the marinated chicken to the pan and cook for 5-7 minutes, stirring occasionally.</li>
+                            <li>Add tomato puree and cook for another 10 minutes until the chicken is cooked through.</li>
+                            <li>Stir in heavy cream and honey. Simmer for 5 minutes on low heat.</li>
+                            <li>Season with salt to taste and garnish with fresh cilantro before serving.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="recipe-tips">
+                    <h3>Chef's Tips</h3>
+                    <p>For an extra layer of flavor, try grilling the marinated chicken for a few minutes before adding it to the curry sauce. This adds a smoky dimension that complements the sweet and spicy notes beautifully. Serve with basmati rice or naan bread to soak up the delicious sauce.</p>
+                </div>
+                
+                <h2>Caramelized Onion & Coconut Curry</h2>
+                
+                <div class="recipe-intro">
+                    <p>This vegetarian curry showcases how caramelization can transform simple ingredients into something extraordinary. The natural sugars in onions develop a deep, sweet flavor when slowly cooked, which pairs wonderfully with the creamy coconut and aromatic spices. It's a perfect example of how candy-making techniques can enhance savory dishes.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Caramelized Onion & Coconut Curry" class="recipe-image">
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>4 large onions, thinly sliced</li>
+                            <li>2 tablespoons ghee or oil</li>
+                            <li>1 tablespoon brown sugar</li>
+                            <li>1 can (14 oz) coconut milk</li>
+                            <li>2 teaspoons curry powder</li>
+                            <li>1 teaspoon garam masala</li>
+                            <li>1/2 teaspoon chili powder</li>
+                            <li>1 cup mixed vegetables (peas, carrots, bell peppers)</li>
+                            <li>1 potato, cubed</li>
+                            <li>Salt to taste</li>
+                            <li>Fresh cilantro for garnish</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>Instructions</h3>
+                        <ol>
+                            <li>Heat ghee or oil in a large pan over medium-low heat. Add sliced onions and cook slowly, stirring occasionally, for 20-25 minutes until they become soft and golden.</li>
+                            <li>Sprinkle brown sugar over the onions and continue cooking for another 5-10 minutes until deeply caramelized.</li>
+                            <li>Add all spices and cook for 1 minute until fragrant.</li>
+                            <li>Add potatoes and mixed vegetables, stirring to coat with the onion-spice mixture.</li>
+                            <li>Pour in coconut milk and bring to a simmer. Cook for 15-20 minutes until vegetables are tender.</li>
+                            <li>Season with salt and garnish with fresh cilantro before serving.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h2>Sweet Potato & Marshmallow Curry</h2>
+                
+                <div class="recipe-intro">
+                    <p>This playful recipe takes inspiration from the classic sweet potato casserole but transforms it into a savory curry. The marshmallows melt into the sauce, creating a subtle sweetness that complements the earthiness of sweet potatoes and the warmth of curry spices. It's a comforting dish that bridges the gap between dessert and main course.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Sweet Potato & Marshmallow Curry" class="recipe-image">
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>2 large sweet potatoes, peeled and cubed</li>
+                            <li>1 cup mini marshmallows</li>
+                            <li>1 onion, chopped</li>
+                            <li>2 cloves garlic, minced</li>
+                            <li>1 tablespoon curry powder</li>
+                            <li>1 teaspoon smoked paprika</li>
+                            <li>1/2 teaspoon cinnamon</li>
+                            <li>1 can (14 oz) diced tomatoes</li>
+                            <li>1 cup vegetable broth</li>
+                            <li>2 tablespoons maple syrup</li>
+                            <li>Salt and pepper to taste</li>
+                            <li>Toasted pecans for garnish</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>Instructions</h3>
+                        <ol>
+                            <li>Preheat oven to 400°F (200°C). Toss sweet potato cubes with oil, salt, and pepper. Roast for 25-30 minutes until tender and slightly caramelized.</li>
+                            <li>In a large pot, sauté onion and garlic until softened.</li>
+                            <li>Add curry powder, smoked paprika, and cinnamon. Cook for 1 minute until fragrant.</li>
+                            <li>Add diced tomatoes and vegetable broth. Bring to a simmer.</li>
+                            <li>Add roasted sweet potatoes and maple syrup. Cook for 10 minutes.</li>
+                            <li>Stir in marshmallows and cook until they begin to melt into the sauce.</li>
+                            <li>Season with salt and pepper. Garnish with toasted pecans before serving.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h2>Chocolate & Chili Lentil Curry</h2>
+                
+                <div class="recipe-intro">
+                    <p>This recipe draws inspiration from Mexican mole sauce, combining the richness of dark chocolate with the heat of chili in a lentil-based curry. The chocolate adds depth and complexity to the dish, while the lentils provide protein and texture. It's a sophisticated fusion that demonstrates how dessert elements can enhance savory cooking.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate & Chili Lentil Curry" class="recipe-image">
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>1 cup brown lentils, rinsed</li>
+                            <li>1 onion, chopped</li>
+                            <li>2 cloves garlic, minced</li>
+                            <li>1-2 dried chilies, crushed</li>
+                            <li>1 tablespoon cocoa powder</li>
+                            <li>1 ounce dark chocolate (70% cocoa), chopped</li>
+                            <li>1 teaspoon cumin</li>
+                            <li>1 teaspoon coriander</li>
+                            <li>1/2 teaspoon cinnamon</li>
+                            <li>1 can (14 oz) crushed tomatoes</li>
+                            <li>3 cups vegetable broth</li>
+                            <li>Salt to taste</li>
+                            <li>Fresh cilantro and yogurt for serving</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>Instructions</h3>
+                        <ol>
+                            <li>In a large pot, sauté onion and garlic until softened.</li>
+                            <li>Add crushed chilies, cumin, coriander, and cinnamon. Cook for 1 minute until fragrant.</li>
+                            <li>Add lentils, crushed tomatoes, and vegetable broth. Bring to a boil, then reduce heat and simmer for 30-35 minutes until lentils are tender.</li>
+                            <li>Stir in cocoa powder and dark chocolate until melted and incorporated.</li>
+                            <li>Season with salt to taste. Serve with fresh cilantro and a dollop of yogurt.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h2>Pineapple & Candy Cane Curry</h2>
+                
+                <div class="recipe-intro">
+                    <p>This festive curry combines tropical pineapple with the cool minty flavor of candy canes for a truly unique dish. The pineapple provides natural sweetness and acidity, while the candy canes add a subtle minty note that complements the curry spices. It's a perfect holiday dish that brings together unexpected flavors in a harmonious way.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Pineapple & Candy Cane Curry" class="recipe-image">
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>1 lb shrimp or chicken, cubed</li>
+                            <li>2 cups fresh pineapple, cubed</li>
+                            <li>2-3 candy canes, crushed</li>
+                            <li>1 bell pepper, sliced</li>
+                            <li>1 onion, sliced</li>
+                            <li>2 tablespoons red curry paste</li>
+                            <li>1 can (14 oz) coconut milk</li>
+                            <li>1 tablespoon fish sauce (or soy sauce for vegetarian)</li>
+                            <li>1 tablespoon lime juice</li>
+                            <li>Fresh basil and mint for garnish</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>Instructions</h3>
+                        <ol>
+                            <li>In a large pan or wok, sauté onion and bell pepper until slightly softened.</li>
+                            <li>Add red curry paste and cook for 1 minute until fragrant.</li>
+                            <li>Add protein of choice and cook until nearly done.</li>
+                            <li>Pour in coconut milk and bring to a simmer.</li>
+                            <li>Add pineapple cubes and crushed candy canes. Cook for 5-7 minutes.</li>
+                            <li>Stir in fish sauce and lime juice.</li>
+                            <li>Garnish with fresh basil and mint before serving.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="popular-recipes">
+                    <h3>Popular Recipes</h3>
+                    
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Coconut Curry">
+                        <div class="recipe-item-info">
+                            <h4>Coconut Candy Curry</h4>
+                            <p>A creamy blend of coconut and sweet spices</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Butter Chicken">
+                        <div class="recipe-item-info">
+                            <h4>Butter Chicken with Honey Glaze</h4>
+                            <p>Classic butter chicken with a sweet twist</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Vegetable Curry">
+                        <div class="recipe-item-info">
+                            <h4>Sweet & Spicy Veggie Medley</h4>
+                            <p>Colorful vegetables in a tangy sweet sauce</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Lamb Curry">
+                        <div class="recipe-item-info">
+                            <h4>Lamb Curry with Date Glaze</h4>
+                            <p>Tender lamb in a rich, sweet sauce</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get the latest candy-curry fusion recipes delivered to your inbox!</p>
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Email: info@candycurrycrate.com</p>
+                    <p>Address: 123 Fusion Street, Flavor Town, FT 12345</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">Recipes</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected with us on social media for daily recipe inspiration!</p>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">PT</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 CandyCurry Crate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- Mirrored from candycurry-crate.web.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Oct 2025 18:33:40 GMT -->
+</html>

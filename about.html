@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from candycurry-crate.web.app/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Oct 2025 18:33:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CandyCurry Crate</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff9f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ffa36c, #ffde7d);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            display: block;
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 300;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556909114-4d0d853e5e25?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ffa36c);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .about-text {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-text h2 {
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ffde7d;
+            padding-bottom: 10px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .mission-section h2 {
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .mission-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin-bottom: 50px;
+        }
+        
+        .team-section h2 {
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #ffde7d;
+            padding-bottom: 10px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #ffde7d;
+        }
+        
+        .team-member h3 {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-member p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #333, #555);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffde7d;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: #ffde7d;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #555;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: #ff6b6b;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CandyCurry Crate</h1>
+                <span>Where Sweet Meets Spicy</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index-2.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="nav-link">Terms Of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Our Sweet & Spicy Story</h2>
+            <p>Discover the passion behind our unique culinary fusion</p>
+            <a href="#mission" class="btn">Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Content -->
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>CandyCurry Crate was born from a simple yet revolutionary idea: what if we could combine the comforting sweetness of candy with the bold, aromatic flavors of curry? Our founder, Chef Anika Sharma, first experimented with this concept during a late-night kitchen experiment that would change her culinary perspective forever.</p>
+                
+                <p>Growing up in a household where traditional Indian spices mingled with Western sweets, Chef Anika always felt there was an unexplored territory between these two flavor worlds. After years of professional cooking and countless experiments, she perfected the art of balancing sweet and spicy elements in harmonious dishes that surprise and delight the palate.</p>
+                
+                <p>What started as a personal passion project quickly grew into a community of food enthusiasts eager to explore new culinary boundaries. Today, CandyCurry Crate is dedicated to sharing these innovative recipes with home cooks and food lovers around the world.</p>
+            </div>
+            
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1556909114-4d0d853e5e25?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Our Kitchen">
+            </div>
+        </div>
+        
+        <!-- Mission Section -->
+        <div class="mission-section" id="mission">
+            <h2>Our Mission</h2>
+            <p>At CandyCurry Crate, we believe that culinary innovation happens at the intersection of tradition and experimentation. Our mission is to challenge conventional flavor pairings and inspire home cooks to explore new taste dimensions.</p>
+            <p>We're committed to creating recipes that not only taste incredible but also tell a story of cultural fusion and culinary creativity. Each dish is carefully crafted to balance flavors in ways that are both surprising and deeply satisfying.</p>
+            <a href="index-2.html" class="btn">Explore Our Recipes</a>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Anika Sharma">
+                    <h3>Anika Sharma</h3>
+                    <p>Founder & Head Chef</p>
+                    <p>The visionary behind CandyCurry Crate, Anika brings 15 years of culinary experience and a passion for flavor innovation.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Marcus Chen">
+                    <h3>Marcus Chen</h3>
+                    <p>Recipe Developer</p>
+                    <p>Marcus specializes in creating balanced flavor profiles that make our sweet and spicy combinations work so beautifully.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Sophia Rodriguez">
+                    <h3>Sophia Rodriguez</h3>
+                    <p>Food Photographer</p>
+                    <p>Sophia captures the vibrant colors and textures of our dishes, making every recipe look as good as it tastes.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="David Kim">
+                    <h3>David Kim</h3>
+                    <p>Community Manager</p>
+                    <p>David connects with our growing community of food lovers and shares their feedback to help us improve.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Email: info@candycurrycrate.com</p>
+                    <p>Address: 123 Fusion Street, Flavor Town, FT 12345</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index-2.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="#">Recipes</a>
+                    <a href="#">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <p>Stay connected with us on social media for daily recipe inspiration!</p>
+                    <div class="social-icons">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">PT</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 CandyCurry Crate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- Mirrored from candycurry-crate.web.app/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Oct 2025 18:33:40 GMT -->
+</html>
